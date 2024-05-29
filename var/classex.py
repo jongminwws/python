@@ -53,7 +53,7 @@ class stock1: # 1. 주식 종목에 대한 정보를 저장하는 Stock 클래�
     def set_code(self,code):
         self.code = code
     # 종목명을 리턴하는 get_name 메서드
-    def get_name(self):
+    def get_name(self):  #
         return self.name
     # 종목코드를 리턴하는 get_code 메서드
     def get_code(self):
