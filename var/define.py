@@ -69,12 +69,3 @@ def make_url(ss):
 url = make_url(ss)
 print(url)
 
-#human 클래스를 선언
-class human:
-    def __init__(self,name,age,gender): #기본 생성자, 매개변수 3개인 생성자 (이때 self는 생략 불가능)
-        self.name= name
-        self.age = age
-        self.gender = gender
-#human 클래스를 인스턴스화 해서 객체 생성
-# areum = human() # 기본 생성자 호출
-areum = human("이름",25,"남성")
