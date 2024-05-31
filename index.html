@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>HOME IoT</h2>
+        </div>
+        <div class="main">
+            <button onclick="ledon()">LED ON</button>
+        </div>
+        <div>
+            <button onclick="ledoff()">LED OFF</button>
+        </div>
+    </div>
+    <div id="result">
+
+    </div>
+    <script>
+        function ledon(){
+            fetch("/led/on")
+            .then(response=>response.text())
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data == "ok"){
+                    result.innerHTML = "<h1>LED is runinng</h1>";
+                }else {
+                    result.innerHTML = "<h1>error</h1>";
+                }
+            });
+        }
+        function ledoff() {
+            fatch("/led/off")
+            .then(response=>response.text())
+            .then(data=> {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data == "ok"){
+                    result.innerHTML = "<h1>LED is stopping</h1>";
+                }else {
+                    result.innerHTML = "<h1>error</h1>";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
